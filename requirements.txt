@@ -1,0 +1,8 @@
+flask
+flask-login
+flask-sqlalchemy
+werkzeug
+groq
+duckduckgo-search
+python-dotenv
+pytest
