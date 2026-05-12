@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AVR - Login</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #0d0d0f; color: #f0f0f0; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .card { width: 100%; max-width: 400px; background: #141416; border: 1px solid #222226; border-radius: 20px; padding: 40px; }
+    h1 { text-align: center; font-size: 28px; color: #00e5ff; margin-bottom: 8px; }
+    p { text-align: center; color: #666; margin-bottom: 24px; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 24px; }
+    .tab { flex: 1; padding: 10px; text-align: center; border-radius: 8px; border: 1px solid #222226; background: transparent; color: #666; cursor: pointer; font-size: 14px; }
+    .tab.active { background: #222226; color: #f0f0f0; }
+    .field { margin-bottom: 16px; }
+    label { display: block; font-size: 12px; color: #666; margin-bottom: 6px; text-transform: uppercase; }
+    input { width: 100%; padding: 12px 16px; background: #0d0d0f; border: 1px solid #222226; border-radius: 10px; color: #f0f0f0; font-size: 15px; outline: none; }
+    input:focus { border-color: #00e5ff; }
+    .btn { width: 100%; padding: 13px; background: linear-gradient(135deg, #00e5ff, #7c4dff); border: none; border-radius: 10px; color: #0d0d0f; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 8px; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .error { background: rgba(255,77,109,0.1); border: 1px solid rgba(255,77,109,0.3); color: #ff4d6d; padding: 12px; border-radius: 10px; font-size: 13px; margin-bottom: 16px; display: none; }
+    .error.show { display: block; }
+    #registerFields { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>AVR</h1>
+    <p>Your Personal AI Assistant</p>
+
+    <div class="tabs">
+      <button class="tab active" id="loginTab" onclick="showLogin()">Sign In</button>
+      <button class="tab" id="registerTab" onclick="showRegister()">Register</button>
+    </div>
+
+    <div class="error" id="errorMsg"></div>
+
+    <div id="loginFields">
+      <div class="field"><label>Username</label><input type="text" id="loginUsername" placeholder="yourname"></div>
+      <div class="field"><label>Password</label><input type="password" id="loginPassword" placeholder="Your password"></div>
+      <button class="btn" id="loginBtn" onclick="doLogin()">Sign In</button>
+    </div>
+
+    <div id="registerFields">
+      <div class="field"><label>Username</label><input type="text" id="regUsername" placeholder="yourname"></div>
+      <div class="field"><label>Email</label><input type="email" id="regEmail" placeholder="you@email.com"></div>
+      <div class="field"><label>Password</label><input type="password" id="regPassword" placeholder="Min 6 characters"></div>
+      <button class="btn" id="registerBtn" onclick="doRegister()">Create Account</button>
+    </div>
+  </div>
+
+  <script>
+    function showError(msg) {
+      const el = document.getElementById('errorMsg');
+      el.textContent = msg;
+      el.classList.add('show');
+    }
+
+    function showLogin() {
+      document.getElementById('loginFields').style.display = 'block';
+      document.getElementById('registerFields').style.display = 'none';
+      document.getElementById('loginTab').classList.add('active');
+      document.getElementById('registerTab').classList.remove('active');
+      document.getElementById('errorMsg').classList.remove('show');
+    }
+
+    function showRegister() {
+      document.getElementById('loginFields').style.display = 'none';
+      document.getElementById('registerFields').style.display = 'block';
+      document.getElementById('registerTab').classList.add('active');
+      document.getElementById('loginTab').classList.remove('active');
+      document.getElementById('errorMsg').classList.remove('show');
+    }
+
+    async function doLogin() {
+      const btn = document.getElementById('loginBtn');
+      const username = document.getElementById('loginUsername').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      if (!username || !password) return showError('Please fill in all fields.');
+      btn.disabled = true; btn.textContent = 'Signing in...';
+      try {
+        const r = await fetch('/login', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({username, password}) });
+        const d = await r.json();
+        if (d.success) { window.location.href = '/'; }
+        else { showError(d.error || 'Login failed.'); btn.disabled = false; btn.textContent = 'Sign In'; }
+      } catch { showError('Connection error.'); btn.disabled = false; btn.textContent = 'Sign In'; }
+    }
+
+    async function doRegister() {
+      const btn = document.getElementById('registerBtn');
+      const username = document.getElementById('regUsername').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const password = document.getElementById('regPassword').value;
+      if (!username || !email || !password) return showError('Please fill in all fields.');
+      if (password.length < 6) return showError('Password must be at least 6 characters.');
+      btn.disabled = true; btn.textContent = 'Creating account...';
+      try {
+        const r = await fetch('/register', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({username, email, password}) });
+        const d = await r.json();
+        if (d.success) { window.location.href = '/'; }
+        else { showError(d.error || 'Registration failed.'); btn.disabled = false; btn.textContent = 'Create Account'; }
+      } catch { showError('Connection error.'); btn.disabled = false; btn.textContent = 'Create Account'; }
+    }
+  </script>
+</body>
+</html>
