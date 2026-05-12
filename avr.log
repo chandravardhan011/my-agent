@@ -1,0 +1,67 @@
+2026-05-12 12:06:07,210 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-12 12:06:07,211 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-12 12:14:54,059 [INFO] AVR starting at http://localhost:5000
+2026-05-12 12:14:54,089 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-12 12:14:54,090 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-12 12:20:46,660 [INFO] AVR starting at http://localhost:5000
+2026-05-12 12:20:46,685 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-12 12:20:46,686 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-12 12:22:30,093 [INFO] AVR starting at http://localhost:5000
+2026-05-12 12:22:30,118 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-12 12:22:30,118 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-12 12:28:05,945 [INFO] AVR starting at http://localhost:5000
+2026-05-12 12:28:05,969 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-12 12:28:05,969 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-12 12:31:33,433 [INFO] AVR starting at http://localhost:5000
+2026-05-12 12:31:33,475 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-12 12:31:33,476 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-12 13:53:43,166 [INFO] AVR starting at http://localhost:5000
+2026-05-12 13:53:43,189 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-12 13:53:43,189 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-12 13:53:51,839 [INFO] 127.0.0.1 - - [12/May/2026 13:53:51] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-12 13:53:51,854 [INFO] 127.0.0.1 - - [12/May/2026 13:53:51] "GET /login?next=/ HTTP/1.1" 200 -
+2026-05-12 13:54:09,110 [INFO] 127.0.0.1 - - [12/May/2026 13:54:09] "GET /login?next=/ HTTP/1.1" 200 -
+2026-05-12 13:54:09,464 [INFO] 127.0.0.1 - - [12/May/2026 13:54:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-12 13:54:39,082 [INFO] Registered: cvr
+2026-05-12 13:54:39,084 [INFO] 127.0.0.1 - - [12/May/2026 13:54:39] "POST /register HTTP/1.1" 200 -
+2026-05-12 13:54:39,126 [INFO] 127.0.0.1 - - [12/May/2026 13:54:39] "GET / HTTP/1.1" 200 -
+2026-05-12 13:54:52,010 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 13:54:52,048 [INFO] User 1 message saved
+2026-05-12 13:54:52,049 [INFO] 127.0.0.1 - - [12/May/2026 13:54:52] "POST /chat HTTP/1.1" 200 -
+2026-05-12 13:55:22,958 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 13:55:22,966 [INFO] User 1 message saved
+2026-05-12 13:55:22,967 [INFO] 127.0.0.1 - - [12/May/2026 13:55:22] "POST /chat HTTP/1.1" 200 -
+2026-05-12 13:55:41,095 [INFO] 127.0.0.1 - - [12/May/2026 13:55:41] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-12 13:55:41,101 [INFO] 127.0.0.1 - - [12/May/2026 13:55:41] "GET /login HTTP/1.1" 200 -
+2026-05-12 13:56:09,452 [INFO] 127.0.0.1 - - [12/May/2026 13:56:09] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-05-12 13:56:27,923 [INFO] 127.0.0.1 - - [12/May/2026 13:56:27] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2026-05-12 13:57:19,569 [INFO] Registered: sushant
+2026-05-12 13:57:19,570 [INFO] 127.0.0.1 - - [12/May/2026 13:57:19] "POST /register HTTP/1.1" 200 -
+2026-05-12 13:57:19,587 [INFO] 127.0.0.1 - - [12/May/2026 13:57:19] "GET / HTTP/1.1" 200 -
+2026-05-12 13:57:27,669 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 13:57:27,682 [INFO] User 2 message saved
+2026-05-12 13:57:27,683 [INFO] 127.0.0.1 - - [12/May/2026 13:57:27] "POST /chat HTTP/1.1" 200 -
+2026-05-12 13:57:46,239 [INFO] 127.0.0.1 - - [12/May/2026 13:57:46] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-12 13:57:46,245 [INFO] 127.0.0.1 - - [12/May/2026 13:57:46] "GET /login HTTP/1.1" 200 -
+2026-05-12 13:57:58,846 [INFO] Login: sushant
+2026-05-12 13:57:58,847 [INFO] 127.0.0.1 - - [12/May/2026 13:57:58] "POST /login HTTP/1.1" 200 -
+2026-05-12 13:57:58,863 [INFO] 127.0.0.1 - - [12/May/2026 13:57:58] "GET / HTTP/1.1" 200 -
+2026-05-12 13:58:27,771 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 13:58:27,780 [INFO] User 2 message saved
+2026-05-12 13:58:27,781 [INFO] 127.0.0.1 - - [12/May/2026 13:58:27] "POST /chat HTTP/1.1" 200 -
+2026-05-12 13:58:57,576 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 13:58:57,586 [INFO] User 2 message saved
+2026-05-12 13:58:57,587 [INFO] 127.0.0.1 - - [12/May/2026 13:58:57] "POST /chat HTTP/1.1" 200 -
+2026-05-12 13:59:26,463 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 13:59:26,477 [INFO] User 2 message saved
+2026-05-12 13:59:26,477 [INFO] 127.0.0.1 - - [12/May/2026 13:59:26] "POST /chat HTTP/1.1" 200 -
+2026-05-12 13:59:47,206 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 13:59:47,214 [INFO] User 2 message saved
+2026-05-12 13:59:47,215 [INFO] 127.0.0.1 - - [12/May/2026 13:59:47] "POST /chat HTTP/1.1" 200 -
